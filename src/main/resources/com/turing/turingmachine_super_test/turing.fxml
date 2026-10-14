@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="800" prefWidth="1400" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.turing.turingmachine_super_test.TuringController">
+
+    <!-- Верхняя панель: Кнопки управления и лента -->
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <ToolBar>
+                <Button onAction="#onStart" styleClass="button-start" text="Старт" />
+                <Button onAction="#onStop" styleClass="button-stop" text="Стоп" />
+                <Button onAction="#onStepForward" styleClass="button-step-forward" text="Шаг вперёд" />
+            </ToolBar>
+
+            <HBox alignment="CENTER" spacing="10">
+                <Button onAction="#onScrollLeft" text="◀" />
+                <ScrollPane fx:id="tapeScrollPane" fitToHeight="true" fitToWidth="true" prefViewportHeight="70" prefViewportWidth="1000">
+                    <HBox fx:id="tapeContainer" alignment="CENTER_LEFT" spacing="5" />
+                </ScrollPane>
+                <Button onAction="#onScrollRight" text="▶" />
+            </HBox>
+        </VBox>
+    </top>
+
+    <!-- Левая панель: Условие задачи, Внешний алфавит, Таблица переходов -->
+    <left>
+        <VBox prefHeight="577.0" prefWidth="654.0" spacing="15">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <Label text="Условие задачи:" />
+            <TextArea fx:id="taskConditionTextArea" prefRowCount="5" wrapText="true" />
+            <Label text="Внешний алфавит (разделённый пробелами):" />
+            <TextField fx:id="alphabetField" onKeyReleased="#onAlphabetChanged" />
+            <Label text="Таблица переходов:" />
+            <TableView fx:id="transitionTable" prefHeight="274.0" prefWidth="634.0">
+                <columns>
+                    <TableColumn fx:id="symbolColumn" prefWidth="100" text="A\Q" />
+                    <!-- Переходы для каждого состояния -->
+                </columns>
+            </TableView>
+            <Button onAction="#onAddState" text="Добавить состояние" />
+        </VBox>
+    </left>
+
+    <!-- Правая панель: Поле комментариев и правила ввода состояний -->
+    <right>
+        <VBox prefHeight="577.0" prefWidth="700.0" spacing="10">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <Label text="Комментарий:" />
+            <TextArea fx:id="commentTextArea" prefHeight="307.0" prefRowCount="10" prefWidth="679.0" wrapText="true" />
+            <!-- Новое поле для правил -->
+            <Label prefHeight="16.0" prefWidth="289.0" text="Правила ввода состояний:" />
+            <TextArea editable="false" prefHeight="142.0" prefWidth="606.0" wrapText="true">
+                <text>
+                    Формат ввода переходов:
+                    1. read,write,shift,nextState
+                    2. read/write: element
+                    3. shift: R (вправо), L (влево), N (без движения)
+                    4. nextState: number
+                    5. Пример: abR1
+                </text>
+            </TextArea>
+        </VBox>
+    </right>
+
+    <!-- Нижняя панель: Статусбар -->
+    <bottom>
+        <HBox alignment="CENTER_LEFT">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <Label fx:id="statusLabel" text="Статус: Готов" />
+        </HBox>
+    </bottom>
+
+</BorderPane>

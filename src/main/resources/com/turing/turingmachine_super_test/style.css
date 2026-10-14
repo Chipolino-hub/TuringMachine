@@ -1,0 +1,136 @@
+.root {
+    -fx-font-family: "Arial";
+    -fx-background-color: #f7f7f7; /* Светло-серый фон для всего приложения */
+    -fx-padding: 10;
+}
+
+/* Заголовки и метки */
+.label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333; /* Тёмно-серый текст */
+    -fx-font-weight: bold;
+}
+
+/* Текстовые поля */
+.text-area, .text-field {
+    -fx-background-color: #ffffff; /* Белый фон для полей ввода */
+    -fx-border-color: #cccccc; /* Светло-серая граница */
+    -fx-border-width: 1;
+    -fx-padding: 5;
+    -fx-text-fill: #333; /* Тёмно-серый текст */
+    -fx-font-size: 12px;
+}
+
+/* Общий стиль кнопок */
+.button {
+    -fx-background-color: #e0e0e0; /* Светло-серая кнопка */
+    -fx-border-color: #b0b0b0; /* Граница кнопки */
+    -fx-border-width: 1;
+    -fx-text-fill: #333; /* Тёмно-серый текст */
+    -fx-font-size: 12px;
+    -fx-padding: 5 15; /* Пространство вокруг текста */
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 2, 0, 1, 1); /* Лёгкая тень */
+}
+
+.button:hover {
+    -fx-background-color: #d6d6d6; /* Немного темнее при наведении */
+}
+
+.button:pressed {
+    -fx-background-color: #c0c0c0; /* Ещё темнее при нажатии */
+}
+
+/* Кнопка "Старт" - светло-зелёный */
+.button-start {
+    -fx-background-color: #d4edda; /* Светло-зелёный */
+    -fx-border-color: #c3e6cb; /* Зелёная граница */
+    -fx-text-fill: #155724; /* Тёмно-зелёный текст */
+    -fx-font-weight: bold;
+}
+
+.button-start:hover {
+    -fx-background-color: #c3e6cb; /* Темнее при наведении */
+}
+
+.button-start:pressed {
+    -fx-background-color: #a9d5aa; /* Ещё темнее при нажатии */
+}
+
+/* Кнопка "Стоп" - светло-красный */
+.button-stop {
+    -fx-background-color: #f8d7da; /* Светло-красный */
+    -fx-border-color: #f5c6cb; /* Красная граница */
+    -fx-text-fill: #721c24; /* Тёмно-красный текст */
+    -fx-font-weight: bold;
+}
+
+.button-stop:hover {
+    -fx-background-color: #f5c6cb; /* Темнее при наведении */
+}
+
+.button-stop:pressed {
+    -fx-background-color: #e4aeb1; /* Ещё темнее при нажатии */
+}
+
+/* Кнопка "Шаг вперёд" - голубой */
+.button-step-forward {
+    -fx-background-color: #d1ecf1; /* Светло-голубой */
+    -fx-border-color: #bee5eb; /* Голубая граница */
+    -fx-text-fill: #0c5460; /* Тёмно-голубой текст */
+    -fx-font-weight: bold;
+}
+
+.button-step-forward:hover {
+    -fx-background-color: #bee5eb; /* Темнее при наведении */
+}
+
+.button-step-forward:pressed {
+    -fx-background-color: #a3dbe2; /* Ещё темнее при нажатии */
+}
+
+/* Таблицы */
+.table-view {
+    -fx-background-color: #ffffff; /* Белый фон таблицы */
+    -fx-border-color: #cccccc; /* Светло-серая граница */
+    -fx-table-cell-border-color: #e0e0e0; /* Светло-серый цвет ячеек */
+    -fx-padding: 5;
+}
+
+.table-view .column-header {
+    -fx-background-color: #eaeaea; /* Светло-серый фон заголовка */
+    -fx-border-color: #d0d0d0; /* Границы заголовка */
+    -fx-font-size: 12px;
+    -fx-text-fill: #333; /* Тёмно-серый текст */
+}
+
+/* Лента */
+#tapeContainer {
+    -fx-background-color: #f0f0f0; /* Светло-серый фон */
+    -fx-padding: 10;
+}
+
+#tapeContainer .vbox {
+    -fx-border-color: #999; /* Граница ячейки */
+    -fx-border-width: 1;
+    -fx-background-color: #ffffff; /* Белый фон ячейки */
+    -fx-padding: 5;
+}
+
+#tapeContainer .vbox:hover {
+    -fx-background-color: #e8e8e8; /* Подсветка ячейки при наведении */
+}
+
+#tapeContainer .vbox:selected {
+    -fx-background-color: #c0c0c0; /* Подсветка выбранной ячейки */
+}
+
+/* Строка состояния */
+#statusLabel {
+    -fx-font-size: 12px;
+    -fx-text-fill: #555; /* Серый текст */
+    -fx-padding: 5;
+    -fx-background-color: #e0e0e0; /* Светло-серый фон */
+    -fx-border-color: #cccccc;
+    -fx-border-width: 1;
+}
